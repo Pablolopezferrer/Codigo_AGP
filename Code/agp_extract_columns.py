@@ -24,7 +24,7 @@ mapping = {
     "ID_Muestra": ["SAMPLE_ID", "SAMPLE_NAME", "SAMPLE", "HOST_SUBJECT_ID"],
     "Edad": ["AGE"],
     "Sexo": ["SEX"],
-    "IMC": ["BMI", "BMI", "BMI"],
+    "IMC": ["BMI"],
     "Tipo_de_dieta": ["DIET_TYPE", "DIET"],
     "Estado_de_salud": ["DIABETES", "IBD", "ASTHMA", "CONDITIONS_MEDICATION"],
     "Uso_antibióticos_últimos_6_meses": ["ANTIBIOTIC_MEDS", "ANTIBIOTIC_CONDITION", "ANTIBIOTIC_SELECT"],
