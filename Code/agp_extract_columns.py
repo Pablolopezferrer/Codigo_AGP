@@ -69,7 +69,7 @@ if out["ID_Muestra"].isna().all():
 # ---- calcular phylum % desde AG.txt (si está) ----
 phyla = ["Firmicutes", "Bacteroidetes", "Actinobacteria", "Proteobacteria"]
 for p in phyla:
-    out[p + "_%"] = pd.NA
+    out[p + "%"] = pd.NA
 out["F_B_ratio"] = pd.NA
 
 if ag_txt_path.exists():
@@ -94,15 +94,15 @@ if ag_txt_path.exists():
         for p in phyla:
             mask = taxonomy.str.contains(p, case=False, na=False)
             if mask.sum() == 0:
-                out[p + "_%"] = pd.NA
+                out[p + "%"] = pd.NA
             else:
                 subtotal = counts.loc[:, mask].sum(axis=1)
                 perc = (subtotal / total.replace({0: np.nan})) * 100.0
-                out.loc[perc.index, p + "_%"] = perc
+                out.loc[perc.index, p + "%"] = perc
         # F/B ratio
         try:
-            f = out["Firmicutes_%"].astype(float)
-            b = out["Bacteroidetes_%"].astype(float).replace({0: np.nan})
+            f = out["Firmicutes%"].astype(float)
+            b = out["Bacteroidetes%"].astype(float).replace({0: np.nan})
             out["F_B_ratio"] = (f / b).replace([np.inf, -np.inf], np.nan)
         except Exception:
             out["F_B_ratio"] = pd.NA
