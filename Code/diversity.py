@@ -122,13 +122,13 @@ prot = get_phylum_col("Proteobacteria")
 result = pd.DataFrame({
     "SampleID": sample_ids,
     "Diversidad_Shannon": shannon_values,
-    "Firmicutes_%": phylum_pct[firm] if firm else 0,
-    "Bacteroidetes_%": phylum_pct[bact] if bact else 0,
-    "Actinobacteria_%": phylum_pct[acti] if acti else 0,
-    "Proteobacteria_%": phylum_pct[prot] if prot else 0,
+    "Firmicutes%": phylum_pct[firm] if firm else 0,
+    "Bacteroidetes%": phylum_pct[bact] if bact else 0,
+    "Actinobacteria%": phylum_pct[acti] if acti else 0,
+    "Proteobacteria%": phylum_pct[prot] if prot else 0,
 })
 
-result["F_B_ratio"] = result["Firmicutes_%"] / result["Bacteroidetes_%"]
+result["F_B_ratio"] = result["Firmicutes%"] / result["Bacteroidetes%"]
 
 # ----------------------------
 # 7. EXPORTAR A CSV
